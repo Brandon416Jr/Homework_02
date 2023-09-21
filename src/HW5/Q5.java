@@ -5,5 +5,14 @@ package HW5;
 //與數字的亂數組合，如圖
 
 public class Q5 {
+	public void getAuthCode() {
+		
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		
+	}
 
 }
