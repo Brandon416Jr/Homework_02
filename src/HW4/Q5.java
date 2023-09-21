@@ -24,10 +24,10 @@ public class Q5 {
 		int[] normalYear = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 		int[] leapYear = { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 		int day = 0;
-
+		
 		if (year % 4 == 0 && year % 100 == 0 && year % 400 == 0 || year % 4 == 0 && year % 100 != 0) {
 			// 閏年
-			if (month > 12 || month == 2 && date > 29
+			if (month > 12 || month < 1 || month == 2 && date > 29
 					|| (month == 4 || month == 6 || month == 9 || month == 11) && date > 30 || (month == 1 || month == 3
 							|| month == 5 || month == 7 || month == 8 || month == 10 || month == 12) && date > 31) {
 				System.out.println("請重新輸入日期");
@@ -42,7 +42,7 @@ public class Q5 {
 			System.out.println("輸入的日期為" + year + "年的第" + (day + date) + "天");
 		} else {
 			// 平年
-			if (month > 12 || month == 2 && date > 28
+			if (month > 12 || month < 1 || month == 2 && date > 28
 					|| (month == 4 || month == 6 || month == 9 || month == 11) && date > 30 || (month == 1 || month == 3
 							|| month == 5 || month == 7 || month == 8 || month == 10 || month == 12) && date > 31) {
 				System.out.println("請重新輸入日期");
