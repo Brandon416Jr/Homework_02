@@ -8,18 +8,15 @@ public class Q5 {
 	public void getAuthCode() {
 		int[] code = new int[8];
 		int ver;
-		
-		start: 
+
 		for (int i = 0; i < code.length; i++) {
-			for (; true;) {
-				ver = (int) (Math.random() * 75) + 48;
+			ver = (int) (Math.random() * 75) + 48;
 
-				if ((ver >= 48 && ver <= 57) || (ver >= 65 && ver <= 90) || (ver >= 97 && ver <= 122)) {
-					code[i] = ver;
-
-					System.out.print((char) code[i]);
-					continue start;
-				}
+			if ((ver >= 48 && ver <= 57) || (ver >= 65 && ver <= 90) || (ver >= 97 && ver <= 122)) {
+				code[i] = ver;
+				System.out.print((char) code[i]);
+			} else {
+				i--;
 			}
 		}
 
