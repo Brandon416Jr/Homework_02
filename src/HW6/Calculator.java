@@ -19,47 +19,40 @@ public class Calculator {
 	}
 	
 	public Calculator(int x, int y) throws CalException {
-		if (! (x == 0 && y == 0)) {
+		if (x >= 0 && y >= 0) {
 			this.x = x;
 			this.y = y;
-		} else if (y < 0) {
-			throw new CalException("y不能為負數");
 		} else {
-			throw new CalException("x與y不能同時為0");
-		}
-	}
-	
-	public void setx(int x) throws CalException {
-		if (! (x == 0 && y == 0)) {
-			this.x = x;
-			this.y= y;
-		} else if (y < 0) {
-			throw new CalException("y不能為負數");
-		} else {
-			throw new CalException("x與y不能同時為0");
+			throw new CalException("格式不對喔!請重新輸入!");
 		}
 	}
 	
 	public int getx() {
 		return x;
 	}
-
-	public void sety(int y) throws CalException {
-		if (! (x == 0 && y == 0)) {
-			this.x = x;
-			this.y = y;
-		} else if (y < 0) {
-			throw new CalException("y不能為負數");
-		} else {
-			throw new CalException("x與y不能同時為0");
-		}
+	
+	public void setx(int x) throws CalException {
+		this.x = x;
 	}
 	
 	public int gety() {
 		return y;
 	}
 	
-	public int powerXY(int x, int y) {
-		return (int)Math.pow(x, y);
+	public void sety (int y) throws CalException {
+		if (y >= 0) {
+			this.y = y;
+		} else {
+			throw new CalException("y值不能小於0，請重新輸入y值");
+		}
 	}
+	
+	public int powerXY(int x, int y) throws CalException {
+		if (x == 0 && y == 0) {
+			throw new CalException("0的0次方完全沒有意義，請重新輸入!");
+		} else {
+			return (int)Math.pow(x, y);
+		}
+	}
+	
 }
