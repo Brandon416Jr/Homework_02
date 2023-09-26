@@ -7,65 +7,40 @@ import java.util.Scanner;
 
 public class Q3 {
 	public static void main(String[] args) {
-		System.out.println("請您設計一隻程式，讓阿文 可以輸入他不想要的數字，畫面會顯示他可以選擇的號碼與總數");
-		int n=0;
-		int n10, n1;
-		int amount =0;
+		Scanner sc3 = new Scanner(System.in);
+		System.out.println("阿文...你討厭甚麼數字");
+		int lotteryNum = sc3.nextInt();
 
-		Scanner sc = new Scanner(System.in);
-		System.out.println("阿文...請輸入你討厭哪個數字？");
-		n =sc.nextInt();
-		for (n10=0; n10<=4; n10++) {
-			if (n10 == n) {
-				continue;
-			}
-			for (n1=0; n1<=9; n1++) {
-					if (n1 == n) {
-						continue;					
-					}
-					if (n1 != 0 && n10 == 0) {
-						System.out.print(n1 + " ");
-						amount = amount+1;
-					}
-					else if (n10 >0) {
-						System.out.print(n10 +""+n1 + " ");
-						amount = amount+1;
-					}
-			}
+		while (lotteryNum == 0 || lotteryNum > 9) {
+			System.out.println("亂寫!給我再說一個1~9的數字!");
+			lotteryNum = sc3.nextInt();
 		}
-								
-		System.out.println();
-		System.out.println("總共個數："+ amount);
-		
-//進階挑戰：輸入不要的數字後，直接亂數印出6個號碼且不得重覆
-		int r;
-		String[] all = new String[amount];
-		int i=0;
-		for (n10=0; n10<=4; n10++) {
-			if (n10 == n) {
-				continue;
-			}
-			for (n1=0; n1<=9; n1++) {
-					if (n1 == n) {
-						continue;					
-					}
-					if (n1 != 0 && n10 == 0) {
-						all[i]=n1+"";
-						i = i+1;
-					}
-					else if (n10 >0) {
-						all[i]=n10+""+n1;
-						i = i+1;
-					}
-			}
-		}
-		System.out.println("亂數印出6個不重覆號碼給阿文：");
-		for(int j=0;j<6;j++) {
-		r=(int)(Math.random()*35);
-			if(all[r]!="0") {
-				System.out.print(all[r]+" ");
-				all[r]="0";
+		int count = 0;
+		for (int i = 1; i <= 49; i++) {
+			if (i % 10 != lotteryNum && i / 10 != lotteryNum) {
+				count += 1;
+				System.out.print(i + "\t");
+				if (count % 7 == 0) {
+					System.out.println("");
 				}
+			}
+		}
+		System.out.println("總共" + count + "個數字可以選擇");
+		
+		System.out.println("=====================================\n");
+		
+		System.out.println("進階挑戰：輸入不要的數字後，直接亂數印出6個號碼且不得重覆");
+		int[] finalLottery = new int[6];
+		System.out.print("電腦選號為: ");
+		for (int i = 0; i < 6; i++) {
+			int num = (int) (Math.random() * 48 + 1);
+			if (num % 10 != lotteryNum && num / 10 != lotteryNum) {
+				finalLottery[i] = num;
+				System.out.print(finalLottery[i] + "\t");
+			} else {
+				i--;
+			}
+			
 		}
 		
 	}

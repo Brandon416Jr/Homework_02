@@ -1,7 +1,7 @@
 package HW2;
 
 /* 請設計一隻Java程式，輸出結果為以下：
-A             // 41~ 46 (unicode - HEX) 66 ~ 70 (十進位)
+A             // 41~ 46 (unicode - HEX) 66 ~ 71 (十進位)
 BB
 CCC
 DDDD
