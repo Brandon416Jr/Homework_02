@@ -13,28 +13,22 @@ import java.util.Scanner;
 
 public class Q4 {
 	public static void main(String[] args) {
+		int[][] colCash = {{25, 32, 8, 29, 27}, {2500, 800, 500, 1000, 1200}};
 		Scanner sc = new Scanner(System.in);
-		System.out.println("小華欲借的金額: ");
-
-		int[][] money = { { 25, 32, 8, 29, 27 }, { 2500, 800, 500, 1000, 1200 } };
-		int count = 0;
-		int x = sc.nextInt();
-		System.out.print("員工編號");
-		for (int i = 1; i < money.length; i++) {
-			for (int j = 0; j < money[i].length; j++) {
-				
-				if (x <= money[1][j]) {
-					
-					System.out.print( money[0][j] + " ");
-					
-					count += 1;
+		System.out.println("請問阿文需要借多少?");
+		int needCash = sc.nextInt();
+		System.out.print("有錢可借的員工編號: ");
+		int count1 = 0;
+		
+		for (int i = 1; i < colCash.length; i++) {
+			for (int m = 0; m < colCash[i].length; m++) {
+				if (needCash <= colCash[1][m]) {
+					System.out.print(colCash[0][m] + " ");
+					count1 += 1;
 				}
-				
 			}
-
 		}
-
-		System.out.print("號可以借他，總共" + count + "人");
+		System.out.println("總共" + count1 + "人");
 		
 		
 	}

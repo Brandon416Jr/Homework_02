@@ -6,43 +6,16 @@ package HW4;
 
 public class Q3 {
 	public static void main(String[] args) {
-		String[] planetSystem = {"mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune"};
-		int vowel = 0;
-		for(int i = 0; i < planetSystem.length; i++) {
-			for(int j = 0; j < planetSystem[i].length(); j++) {
-//				switch (planetSystem[i].charAt(j)) {
-//				case 'a':
-//				vowel += 1;
-//				break;
-//				case 'e':
-//				vowel += 1;
-//				break;
-//				case 'i':
-//				vowel += 1;
-//				break;
-//				case 'o':
-//				vowel += 1;
-//				break;
-//				case 'u':
-//				vowel += 1;
-//				break;
-//				}
-				if (planetSystem[i].charAt(j) == 'a') {
-					vowel += 1;
-				} else if (planetSystem[i].charAt(j) == 'e') {
-					vowel += 1;
-				} else if (planetSystem[i].charAt(j) == 'i') {
-					vowel += 1;
-				} else if (planetSystem[i].charAt(j) == 'o') {
-					vowel += 1;
-				} else if (planetSystem[i].charAt(j) == 'u') {
-					vowel += 1;
+		String[] planet = {"mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune"};
+		int count = 0;
+		for (int i = 0; i < planet.length; i++) {
+			for (int k = 0; k < planet[i].length(); k++) { // 此length()是代表字串的長度
+				if (planet[i].charAt(k) == 'a' || planet[i].charAt(k) == 'e' || planet[i].charAt(k) == 'i' || planet[i].charAt(k) == 'o' || planet[i].charAt(k) == 'u') {
+					count += 1;
 				}
 			}
 		}
-		
-		System.out.println("八大行星字串陣列共有"+vowel+"個母音(a,e,i,o,u)");	
-	}
+		System.out.println("八大行星字串陣列共有"+count+"個母音(a,e,i,o,u)");
 	
-
+	}
 }

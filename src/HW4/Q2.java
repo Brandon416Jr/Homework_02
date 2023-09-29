@@ -5,16 +5,9 @@ package HW4;
 //(提示：String方法，陣列)
 public class Q2 {
 	public static void main(String[] args) {
-		String s =new String("Hello World");
-		String[] ss = s.split("");
-		for (int i = ss.length - 1; i >= 0; i--) {
-			System.out.print(ss[i]);
+		String[] s = {"H", "e", "l", "l", "o", " ", "W", "o", "r", "l" ,"d"};
+		for (int i = s.length - 1; i >= 0; i--) {
+			System.out.print(s[i]);
 		}
-        
-//		String s1 =new String("Hello World");
-//		String[] ss1 = new String[] {s1};
-//		for (int i = 0; i < ss1.length; i++) {
-//			System.out.print(ss1[(ss1.length - i)]);
-//		}
 	}
 }
